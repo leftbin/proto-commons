@@ -1,0 +1,16 @@
+name: build:afs-leftbin-oss-main:main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    #https://github.com/plantoncloud/gh-workflow-build-protobuf/blob/main/.github/workflows/build.yaml
+    uses: plantoncloud/gh-workflow-build-protobuf/.github/workflows/build.yaml@main
+    secrets:
+      PLANTON_CLOUD_SERVICE_CLIENT_ID: ${{ secrets.PLANTON_CLOUD_SERVICE_CLIENT_ID }}
+      PLANTON_CLOUD_SERVICE_CLIENT_SECRET: ${{ secrets.PLANTON_CLOUD_SERVICE_CLIENT_SECRET }}
+    with:
+      PLANTON_CLOUD_SERVICE_CLI_ENV: live
+      PLANTON_CLOUD_ARTIFACT_STORE_ID: afs-leftbin-oss-main
