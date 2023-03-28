@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package todo.api.proto.v1.todo;
-
-message  Todo {
-  string name = 1;
-  string description = 2;
-}
