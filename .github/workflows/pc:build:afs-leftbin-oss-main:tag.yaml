@@ -15,3 +15,4 @@ jobs:
       PLANTON_CLOUD_ARTIFACT_STORE_ID: afs-leftbin-oss-main
       PLANTON_CLOUD_PRODUCT_ID: leftbin-oss
       PLANTON_CLOUD_ARTIFACT_STORE_MAVEN_REPO_URL: artifactregistry://asia-south1-maven.pkg.dev/planton-shared-services-lo/afs-leftbin-oss-main-maven
+      MAVEN_PACKAGE_VERSION: ${{ github.ref_name }}
