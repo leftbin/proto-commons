@@ -13,3 +13,5 @@ jobs:
     with:
       PLANTON_CLOUD_SERVICE_CLI_ENV: live
       PLANTON_CLOUD_ARTIFACT_STORE_ID: afs-leftbin-oss-main
+      PLANTON_CLOUD_PRODUCT_ID: leftbin-oss
+      PLANTON_CLOUD_ARTIFACT_STORE_MAVEN_REPO_URL: artifactregistry://asia-south1-maven.pkg.dev/planton-shared-services-lo/afs-leftbin-oss-main-maven
