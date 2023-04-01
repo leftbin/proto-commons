@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'com.leftbin.commons'
-version '0.0.001-SNAPSHOT'
+version 'local'
 
 publishing {
     publications {
@@ -19,7 +19,7 @@ publishing {
     repositories {
         maven {
             name "artifact-store"
-            url System.getenv("MAVEN_REPO_URL_LEFTBIN_OSS")
+            url "artifactregistry://asia-south1-maven.pkg.dev/planton-shared-services-lo/afs-leftbin-oss-main-maven"
         }
     }
 }
