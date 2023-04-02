@@ -1,4 +1,4 @@
-v ?= local
+version ?= local
 
 .PHONY: build
 build:	
@@ -11,16 +11,16 @@ build:
 
 .PHONY: deploy
 deploy:
-	buf push --tag ${v}
-	pushd zzjava;rm -rf build;./gradlew publish -Prevision=${v};popd
+	buf push --tag ${version}
+	pushd zzjava;rm -rf build;./gradlew publish -Prevision=${version};popd
 
 .PHONY: deploy-local
 deploy-local:
-	pushd zzjava;rm -rf build;./gradlew publishToMavenLocal -Prevision=${v};popd
+	pushd zzjava;rm -rf build;./gradlew publishToMavenLocal -Prevision=${version};popd
 
 update:
 	buf mod update
 
 .PHONY: release
 release:
-	buf push --tag ${v}
+	buf push --tag ${version}
