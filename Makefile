@@ -6,6 +6,7 @@ build:
 	mkdir -p generated zzjava/src/main/java
 	buf generate --include-imports
 	cp -R generated/java/. zzjava/src/main/java/
+	cp -R generated/kotlin/. zzjava/src/main/kotlin/
 	cp -R generated/go/github.com/plantoncloud/proto-commons/zzgo/. zzgo/
 
 .PHONY: deploy
