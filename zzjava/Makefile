@@ -7,6 +7,6 @@ build:
 test:
 	./gradlew check
 
-.PHONY: publish
-publish:
+.PHONY: release
+release:
 	./gradlew publish -Prevision=${version}

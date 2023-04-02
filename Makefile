@@ -20,3 +20,7 @@ deploy-local:
 
 update:
 	buf mod update
+
+.PHONY: release
+release:
+	buf push --tag ${v}
