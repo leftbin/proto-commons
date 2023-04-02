@@ -1,6 +1,6 @@
 # proto-commons
 
-Protobuf Definitions for Todo APIs.
+Common Protobuf Definitions used in Applications built at Leftbin.
 
 ## build
 

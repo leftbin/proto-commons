@@ -2,7 +2,7 @@ version ?= local
 
 .PHONY: build
 build:	
-	rm -rf generated zzgo/todo zzjava/src/main/java/com/todo
+	rm -rf generated zzgo/leftbin zzjava/src/main/java/com/leftbin
 	mkdir -p generated zzjava/src/main/java
 	buf generate --include-imports
 	cp -R generated/java/. zzjava/src/main/java/
