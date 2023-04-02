@@ -18,6 +18,7 @@ deploy:
 deploy-local:
 	pushd zzjava;rm -rf build;./gradlew publishToMavenLocal -Prevision=${version};popd
 
+.PHONY: update
 update:
 	buf mod update
 

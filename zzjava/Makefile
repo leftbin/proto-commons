@@ -1,4 +1,5 @@
 version?=local
+
 .PHONY: build
 build:
 	./gradlew build
