@@ -4,7 +4,7 @@ on:
     types: [ opened, synchronize ]
 
 jobs:
-  build:
+  review:
     #https://github.com/plantoncloud/gh-workflow-build-protobuf/blob/main/.github/workflows/build.yaml
     uses: plantoncloud/gh-workflow-build-protobuf/.github/workflows/build.yaml@main
     secrets:

@@ -4,7 +4,7 @@ on:
     tags:
       - '*'
 jobs:
-  build:
+  tag:
     #https://github.com/plantoncloud/gh-workflow-build-protobuf/blob/main/.github/workflows/build:release.yaml
     uses: plantoncloud/gh-workflow-build-protobuf/.github/workflows/build:release.yaml@main
     secrets:
