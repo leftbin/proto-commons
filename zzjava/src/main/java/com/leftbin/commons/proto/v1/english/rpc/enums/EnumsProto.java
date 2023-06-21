@@ -35,7 +35,7 @@ public final class EnumsProto {
     java.lang.String[] descriptorData = {
       "\n6leftbin/commons/proto/v1/english/rpc/e" +
       "nums/enums.proto\022*leftbin.commons.proto." +
-      "v1.english.rpc.enums\"\260\006\n\004Word\"\247\006\n\010WordEn" +
+      "v1.english.rpc.enums\"\363\006\n\004Word\"\352\006\n\010WordEn" +
       "um\022\024\n\020word_unspecified\020\000\022\007\n\003app\020\001\022\017\n\013app" +
       "lication\020\002\022\007\n\003aws\020\003\022\t\n\005azure\020\004\022\010\n\004bill\020\005" +
       "\022\013\n\007company\020\006\022\n\n\006config\020\007\022\007\n\003cpu\020\010\022\t\n\005de" +
@@ -55,18 +55,20 @@ public final class EnumsProto {
       "d_services\0203\022\t\n\005spilo\0204\022\010\n\004spot\0205\022\013\n\007stu" +
       "nnel\0206\022\010\n\004team\0207\022\010\n\004type\0208\022\014\n\010username\0209" +
       "\022\010\n\004util\020:\022\013\n\007version\020;\022\014\n\010workload\020<\022\007\n" +
-      "\003url\020=\022\007\n\003env\020>\022\t\n\005kafka\020?\022\013\n\007unknown\020@\"" +
-      "B\n\007Acronym\"7\n\013AcronymEnum\022\027\n\023ACRONYM_UNS" +
-      "PECIFIED\020\000\022\006\n\002NW\020\001\022\007\n\003RPC\020\002B\345\002\n.com.left" +
-      "bin.commons.proto.v1.english.rpc.enumsB\n" +
-      "EnumsProtoP\001ZUgithub.com/plantoncloud/pr" +
-      "oto-commons/zzgo/leftbin/commons/proto/v" +
-      "1/english/rpc/enums\242\002\007LCPVERE\252\002*Leftbin." +
-      "Commons.Proto.V1.English.Rpc.Enums\312\002*Lef" +
-      "tbin\\Commons\\Proto\\V1\\English\\Rpc\\Enums\342" +
-      "\0026Leftbin\\Commons\\Proto\\V1\\English\\Rpc\\E" +
-      "nums\\GPBMetadata\352\0020Leftbin::Commons::Pro" +
-      "to::V1::English::Rpc::Enumsb\006proto3"
+      "\003url\020=\022\007\n\003env\020>\022\t\n\005kafka\020?\022\013\n\007unknown\020@\022" +
+      "\014\n\010resource\020A\022\017\n\013resource_id\020B\022\021\n\rresour" +
+      "ce_type\020C\022\017\n\013product_env\020D\"B\n\007Acronym\"7\n" +
+      "\013AcronymEnum\022\027\n\023ACRONYM_UNSPECIFIED\020\000\022\006\n" +
+      "\002NW\020\001\022\007\n\003RPC\020\002B\340\002\n.com.leftbin.commons.p" +
+      "roto.v1.english.rpc.enumsB\nEnumsProtoP\001Z" +
+      "Pgithub.com/leftbin/proto-commons/zzgo/l" +
+      "eftbin/commons/proto/v1/english/rpc/enum" +
+      "s\242\002\007LCPVERE\252\002*Leftbin.Commons.Proto.V1.E" +
+      "nglish.Rpc.Enums\312\002*Leftbin\\Commons\\Proto" +
+      "\\V1\\English\\Rpc\\Enums\342\0026Leftbin\\Commons\\" +
+      "Proto\\V1\\English\\Rpc\\Enums\\GPBMetadata\352\002" +
+      "0Leftbin::Commons::Proto::V1::English::R" +
+      "pc::Enumsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

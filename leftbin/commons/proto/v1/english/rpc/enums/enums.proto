@@ -72,6 +72,10 @@ message Word {
     env = 62;
     kafka = 63;
     unknown = 64;
+    resource = 65;
+    resource_id = 66;
+    resource_type = 67;
+    product_env = 68;
   }
 }
 

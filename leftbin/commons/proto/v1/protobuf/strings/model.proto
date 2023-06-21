@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package leftbin.commons.proto.v1.protobuf.strings;
+
+message StringList {
+  repeated string entries = 1;
+}

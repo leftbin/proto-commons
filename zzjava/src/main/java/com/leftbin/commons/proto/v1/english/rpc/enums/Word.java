@@ -309,6 +309,22 @@ private static final long serialVersionUID = 0L;
      * <code>unknown = 64;</code>
      */
     unknown(64),
+    /**
+     * <code>resource = 65;</code>
+     */
+    resource(65),
+    /**
+     * <code>resource_id = 66;</code>
+     */
+    resource_id(66),
+    /**
+     * <code>resource_type = 67;</code>
+     */
+    resource_type(67),
+    /**
+     * <code>product_env = 68;</code>
+     */
+    product_env(68),
     UNRECOGNIZED(-1),
     ;
 
@@ -572,6 +588,22 @@ private static final long serialVersionUID = 0L;
      * <code>unknown = 64;</code>
      */
     public static final int unknown_VALUE = 64;
+    /**
+     * <code>resource = 65;</code>
+     */
+    public static final int resource_VALUE = 65;
+    /**
+     * <code>resource_id = 66;</code>
+     */
+    public static final int resource_id_VALUE = 66;
+    /**
+     * <code>resource_type = 67;</code>
+     */
+    public static final int resource_type_VALUE = 67;
+    /**
+     * <code>product_env = 68;</code>
+     */
+    public static final int product_env_VALUE = 68;
 
 
     public final int getNumber() {
@@ -663,6 +695,10 @@ private static final long serialVersionUID = 0L;
         case 62: return env;
         case 63: return kafka;
         case 64: return unknown;
+        case 65: return resource;
+        case 66: return resource_id;
+        case 67: return resource_type;
+        case 68: return product_env;
         default: return null;
       }
     }
