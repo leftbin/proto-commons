@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package leftbin.commons.proto.v1.grpc.stream;
+
+// wrapper for stream output line
+message OutputLine {
+  //a string representing output of a stream operation
+  string value = 1;
+}

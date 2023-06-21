@@ -8,7 +8,7 @@ managed:
       - google/protobuf/empty
       - google/protobuf/timestamp
   go_package_prefix:
-    default: github.com/plantoncloud/proto-commons/zzgo
+    default: github.com/leftbin/proto-commons/zzgo
     except:
       - google/protobuf/empty
       - google/protobuf/timestamp

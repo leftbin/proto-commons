@@ -97,6 +97,10 @@ public struct Leftbin_Commons_Proto_V1_English_Rpc_Enums_Word {
     case env // = 62
     case kafka // = 63
     case unknown // = 64
+    case resource // = 65
+    case resourceID // = 66
+    case resourceType // = 67
+    case productEnv // = 68
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -170,6 +174,10 @@ public struct Leftbin_Commons_Proto_V1_English_Rpc_Enums_Word {
       case 62: self = .env
       case 63: self = .kafka
       case 64: self = .unknown
+      case 65: self = .resource
+      case 66: self = .resourceID
+      case 67: self = .resourceType
+      case 68: self = .productEnv
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -241,6 +249,10 @@ public struct Leftbin_Commons_Proto_V1_English_Rpc_Enums_Word {
       case .env: return 62
       case .kafka: return 63
       case .unknown: return 64
+      case .resource: return 65
+      case .resourceID: return 66
+      case .resourceType: return 67
+      case .productEnv: return 68
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -320,6 +332,10 @@ extension Leftbin_Commons_Proto_V1_English_Rpc_Enums_Word.WordEnum: CaseIterable
     .env,
     .kafka,
     .unknown,
+    .resource,
+    .resourceID,
+    .resourceType,
+    .productEnv,
   ]
 }
 
@@ -483,6 +499,10 @@ extension Leftbin_Commons_Proto_V1_English_Rpc_Enums_Word.WordEnum: SwiftProtobu
     62: .same(proto: "env"),
     63: .same(proto: "kafka"),
     64: .same(proto: "unknown"),
+    65: .same(proto: "resource"),
+    66: .same(proto: "resource_id"),
+    67: .same(proto: "resource_type"),
+    68: .same(proto: "product_env"),
   ]
 }
 
