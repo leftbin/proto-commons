@@ -11,7 +11,7 @@ build:
 
 .PHONY: deploy
 deploy:
-	buf push --tag ${version}
+	buf push --tag ${version} || true
 	pushd zzjava;rm -rf build;./gradlew publish -Prevision=${version};popd
 
 .PHONY: deploy-local
