@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package leftbin.commons.proto.v1.rpc.security.authentication.extensions;
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.MethodOptions {
+  bool is_public = 50057;
+}
