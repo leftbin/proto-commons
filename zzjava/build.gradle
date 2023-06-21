@@ -20,7 +20,7 @@ publishing {
     repositories {
         maven {
             name "artifact-store"
-            url "artifactregistry://asia-south1-maven.pkg.dev/planton-shared-services-lo/afs-leftbin-oss-main-maven"
+            url "artifactregistry://asia-south1-maven.pkg.dev/ca-leftbin-gcp-sh-r6/afs-leftbin-oss-gcp-as1-maven"
         }
     }
 }

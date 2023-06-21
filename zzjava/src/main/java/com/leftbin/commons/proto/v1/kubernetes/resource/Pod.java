@@ -36,11 +36,6 @@ private static final long serialVersionUID = 0L;
     return new Pod();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.leftbin.commons.proto.v1.kubernetes.resource.PodProto.internal_static_leftbin_commons_proto_v1_kubernetes_resource_Pod_descriptor;
@@ -67,7 +62,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NAMESPACE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object namespace_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object namespace_ = "";
   /**
    * <pre>
    * namespace of the pod
@@ -113,7 +109,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int POD_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object podId_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object podId_ = "";
   /**
    * <pre>
    * id of the pod
@@ -170,6 +167,7 @@ private static final long serialVersionUID = 0L;
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "");
   }
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
       java.lang.String, java.lang.String> labels_;
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -180,7 +178,6 @@ private static final long serialVersionUID = 0L;
     }
     return labels_;
   }
-
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
@@ -191,7 +188,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 3 [json_name = "labels"];</code>
    */
-
   @java.lang.Override
   public boolean containsLabels(
       java.lang.String key) {
@@ -214,7 +210,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; labels = 3 [json_name = "labels"];</code>
    */
   @java.lang.Override
-
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
@@ -226,10 +221,11 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; labels = 3 [json_name = "labels"];</code>
    */
   @java.lang.Override
-
-  public java.lang.String getLabelsOrDefault(
+  public /* nullable */
+java.lang.String getLabelsOrDefault(
       java.lang.String key,
-      java.lang.String defaultValue) {
+      /* nullable */
+java.lang.String defaultValue) {
     if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetLabels().getMap();
@@ -243,7 +239,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; labels = 3 [json_name = "labels"];</code>
    */
   @java.lang.Override
-
   public java.lang.String getLabelsOrThrow(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
@@ -256,7 +251,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUS_FIELD_NUMBER = 4;
-  private volatile java.lang.Object status_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    * <pre>
    * status of the pod
@@ -302,7 +298,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUS_REASON_FIELD_NUMBER = 5;
-  private volatile java.lang.Object statusReason_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object statusReason_ = "";
   /**
    * <pre>
    *reason for the current status. this information is useful when pod in not in running state.
@@ -348,7 +345,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUS_MESSAGE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object statusMessage_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object statusMessage_ = "";
   /**
    * <pre>
    *description of the reason for the current status. this information is useful when pod in not in running state.
@@ -394,6 +392,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONTAINERS_FIELD_NUMBER = 7;
+  @SuppressWarnings("serial")
   private java.util.List<com.leftbin.commons.proto.v1.kubernetes.resource.PodContainer> containers_;
   /**
    * <pre>
@@ -454,7 +453,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONTAINERS_IN_READY_STATE_FIELD_NUMBER = 8;
-  private volatile java.lang.Object containersInReadyState_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object containersInReadyState_ = "";
   /**
    * <pre>
    *value derived from containers for easy consumption by clients.
@@ -504,7 +504,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONTAINERS_RESTART_COUNT_FIELD_NUMBER = 9;
-  private int containersRestartCount_;
+  private int containersRestartCount_ = 0;
   /**
    * <pre>
    *sum of the restart counts of each individual container in the pod.
@@ -723,11 +723,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.leftbin.commons.proto.v1.kubernetes.resource.Pod parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.leftbin.commons.proto.v1.kubernetes.resource.Pod parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -828,28 +830,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       namespace_ = "";
-
       podId_ = "";
-
       internalGetMutableLabels().clear();
       status_ = "";
-
       statusReason_ = "";
-
       statusMessage_ = "";
-
       if (containersBuilder_ == null) {
         containers_ = java.util.Collections.emptyList();
       } else {
         containers_ = null;
         containersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       containersInReadyState_ = "";
-
       containersRestartCount_ = 0;
-
       return this;
     }
 
@@ -876,27 +872,51 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.leftbin.commons.proto.v1.kubernetes.resource.Pod buildPartial() {
       com.leftbin.commons.proto.v1.kubernetes.resource.Pod result = new com.leftbin.commons.proto.v1.kubernetes.resource.Pod(this);
-      int from_bitField0_ = bitField0_;
-      result.namespace_ = namespace_;
-      result.podId_ = podId_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.status_ = status_;
-      result.statusReason_ = statusReason_;
-      result.statusMessage_ = statusMessage_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.leftbin.commons.proto.v1.kubernetes.resource.Pod result) {
       if (containersBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           containers_ = java.util.Collections.unmodifiableList(containers_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.containers_ = containers_;
       } else {
         result.containers_ = containersBuilder_.build();
       }
-      result.containersInReadyState_ = containersInReadyState_;
-      result.containersRestartCount_ = containersRestartCount_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.leftbin.commons.proto.v1.kubernetes.resource.Pod result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.namespace_ = namespace_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.podId_ = podId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.status_ = status_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.statusReason_ = statusReason_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.statusMessage_ = statusMessage_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.containersInReadyState_ = containersInReadyState_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.containersRestartCount_ = containersRestartCount_;
+      }
     }
 
     @java.lang.Override
@@ -945,31 +965,37 @@ private static final long serialVersionUID = 0L;
       if (other == com.leftbin.commons.proto.v1.kubernetes.resource.Pod.getDefaultInstance()) return this;
       if (!other.getNamespace().isEmpty()) {
         namespace_ = other.namespace_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPodId().isEmpty()) {
         podId_ = other.podId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(
           other.internalGetLabels());
+      bitField0_ |= 0x00000004;
       if (!other.getStatus().isEmpty()) {
         status_ = other.status_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getStatusReason().isEmpty()) {
         statusReason_ = other.statusReason_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getStatusMessage().isEmpty()) {
         statusMessage_ = other.statusMessage_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (containersBuilder_ == null) {
         if (!other.containers_.isEmpty()) {
           if (containers_.isEmpty()) {
             containers_ = other.containers_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureContainersIsMutable();
             containers_.addAll(other.containers_);
@@ -982,7 +1008,7 @@ private static final long serialVersionUID = 0L;
             containersBuilder_.dispose();
             containersBuilder_ = null;
             containers_ = other.containers_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
             containersBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getContainersFieldBuilder() : null;
@@ -993,6 +1019,7 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getContainersInReadyState().isEmpty()) {
         containersInReadyState_ = other.containersInReadyState_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.getContainersRestartCount() != 0) {
@@ -1026,12 +1053,12 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               namespace_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               podId_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
@@ -1040,21 +1067,22 @@ private static final long serialVersionUID = 0L;
                   LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               internalGetMutableLabels().getMutableMap().put(
                   labels__.getKey(), labels__.getValue());
+              bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
               status_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               break;
             } // case 34
             case 42: {
               statusReason_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               break;
             } // case 42
             case 50: {
               statusMessage_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               break;
             } // case 50
             case 58: {
@@ -1072,12 +1100,12 @@ private static final long serialVersionUID = 0L;
             } // case 58
             case 66: {
               containersInReadyState_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000080;
               break;
             } // case 66
             case 72: {
               containersRestartCount_ = input.readInt32();
-
+              bitField0_ |= 0x00000100;
               break;
             } // case 72
             default: {
@@ -1150,11 +1178,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setNamespace(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       namespace_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1167,8 +1193,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearNamespace() {
-      
       namespace_ = getDefaultInstance().getNamespace();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1183,12 +1209,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setNamespaceBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       namespace_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1246,11 +1270,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPodId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       podId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1263,8 +1285,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearPodId() {
-      
       podId_ = getDefaultInstance().getPodId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1279,12 +1301,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPodIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       podId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1292,7 +1312,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.String> labels_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetLabels() {
+        internalGetLabels() {
       if (labels_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             LabelsDefaultEntryHolder.defaultEntry);
@@ -1300,8 +1320,7 @@ private static final long serialVersionUID = 0L;
       return labels_;
     }
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableLabels() {
-      onChanged();;
+        internalGetMutableLabels() {
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(
             LabelsDefaultEntryHolder.defaultEntry);
@@ -1309,9 +1328,10 @@ private static final long serialVersionUID = 0L;
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return labels_;
     }
-
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
@@ -1322,7 +1342,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 3 [json_name = "labels"];</code>
      */
-
     @java.lang.Override
     public boolean containsLabels(
         java.lang.String key) {
@@ -1345,7 +1364,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; labels = 3 [json_name = "labels"];</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
@@ -1357,10 +1375,11 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; labels = 3 [json_name = "labels"];</code>
      */
     @java.lang.Override
-
-    public java.lang.String getLabelsOrDefault(
+    public /* nullable */
+java.lang.String getLabelsOrDefault(
         java.lang.String key,
-        java.lang.String defaultValue) {
+        /* nullable */
+java.lang.String defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetLabels().getMap();
@@ -1374,7 +1393,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; labels = 3 [json_name = "labels"];</code>
      */
     @java.lang.Override
-
     public java.lang.String getLabelsOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -1385,8 +1403,8 @@ private static final long serialVersionUID = 0L;
       }
       return map.get(key);
     }
-
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableLabels().getMutableMap()
           .clear();
       return this;
@@ -1398,7 +1416,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 3 [json_name = "labels"];</code>
      */
-
     public Builder removeLabels(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -1411,7 +1428,8 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
-    getMutableLabels() {
+        getMutableLabels() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1425,12 +1443,10 @@ private static final long serialVersionUID = 0L;
         java.lang.String key,
         java.lang.String value) {
       if (key == null) { throw new NullPointerException("map key"); }
-      if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+      if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableLabels().getMutableMap()
           .put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1440,11 +1456,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 3 [json_name = "labels"];</code>
      */
-
     public Builder putAllLabels(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap()
           .putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1501,11 +1517,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStatus(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       status_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1518,8 +1532,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1534,12 +1548,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStatusBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       status_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1597,11 +1609,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStatusReason(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       statusReason_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1614,8 +1624,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearStatusReason() {
-      
       statusReason_ = getDefaultInstance().getStatusReason();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1630,12 +1640,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStatusReasonBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       statusReason_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1693,11 +1701,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStatusMessage(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       statusMessage_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1710,8 +1716,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearStatusMessage() {
-      
       statusMessage_ = getDefaultInstance().getStatusMessage();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1726,12 +1732,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStatusMessageBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       statusMessage_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1739,9 +1743,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.leftbin.commons.proto.v1.kubernetes.resource.PodContainer> containers_ =
       java.util.Collections.emptyList();
     private void ensureContainersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         containers_ = new java.util.ArrayList<com.leftbin.commons.proto.v1.kubernetes.resource.PodContainer>(containers_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000040;
        }
     }
 
@@ -1935,7 +1939,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearContainers() {
       if (containersBuilder_ == null) {
         containers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         containersBuilder_.clear();
@@ -2040,7 +2044,7 @@ private static final long serialVersionUID = 0L;
         containersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.leftbin.commons.proto.v1.kubernetes.resource.PodContainer, com.leftbin.commons.proto.v1.kubernetes.resource.PodContainer.Builder, com.leftbin.commons.proto.v1.kubernetes.resource.PodContainerOrBuilder>(
                 containers_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         containers_ = null;
@@ -2107,11 +2111,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setContainersInReadyState(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       containersInReadyState_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2126,8 +2128,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearContainersInReadyState() {
-      
       containersInReadyState_ = getDefaultInstance().getContainersInReadyState();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2144,12 +2146,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setContainersInReadyStateBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       containersInReadyState_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2179,8 +2179,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setContainersRestartCount(int value) {
-      
+
       containersRestartCount_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2194,7 +2195,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearContainersRestartCount() {
-      
+      bitField0_ = (bitField0_ & ~0x00000100);
       containersRestartCount_ = 0;
       onChanged();
       return this;

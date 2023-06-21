@@ -25,11 +25,6 @@ private static final long serialVersionUID = 0L;
     return new PageInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.leftbin.commons.proto.v1.pagination.ModelProto.internal_static_leftbin_commons_proto_v1_pagination_PageInfo_descriptor;
@@ -44,7 +39,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NUM_FIELD_NUMBER = 1;
-  private int num_;
+  private int num_ = 0;
   /**
    * <code>int32 num = 1 [json_name = "num"];</code>
    * @return The num.
@@ -55,7 +50,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SIZE_FIELD_NUMBER = 2;
-  private int size_;
+  private int size_ = 0;
   /**
    * <code>int32 size = 2 [json_name = "size"];</code>
    * @return The size.
@@ -185,11 +180,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.leftbin.commons.proto.v1.pagination.PageInfo parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.leftbin.commons.proto.v1.pagination.PageInfo parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -264,10 +261,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       num_ = 0;
-
       size_ = 0;
-
       return this;
     }
 
@@ -294,10 +290,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.leftbin.commons.proto.v1.pagination.PageInfo buildPartial() {
       com.leftbin.commons.proto.v1.pagination.PageInfo result = new com.leftbin.commons.proto.v1.pagination.PageInfo(this);
-      result.num_ = num_;
-      result.size_ = size_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.leftbin.commons.proto.v1.pagination.PageInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.num_ = num_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.size_ = size_;
+      }
     }
 
     @java.lang.Override
@@ -378,12 +383,12 @@ private static final long serialVersionUID = 0L;
               break;
             case 8: {
               num_ = input.readInt32();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 8
             case 16: {
               size_ = input.readInt32();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 16
             default: {
@@ -401,6 +406,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private int num_ ;
     /**
@@ -417,8 +423,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setNum(int value) {
-      
+
       num_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -427,7 +434,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearNum() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       num_ = 0;
       onChanged();
       return this;
@@ -448,8 +455,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setSize(int value) {
-      
+
       size_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -458,7 +466,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearSize() {
-      
+      bitField0_ = (bitField0_ & ~0x00000002);
       size_ = 0;
       onChanged();
       return this;

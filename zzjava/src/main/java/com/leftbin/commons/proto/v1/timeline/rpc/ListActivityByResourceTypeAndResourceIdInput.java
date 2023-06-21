@@ -31,11 +31,6 @@ private static final long serialVersionUID = 0L;
     return new ListActivityByResourceTypeAndResourceIdInput();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.leftbin.commons.proto.v1.timeline.rpc.ModelProto.internal_static_leftbin_commons_proto_v1_timeline_rpc_ListActivityByResourceTypeAndResourceIdInput_descriptor;
@@ -50,7 +45,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RESOURCE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resourceId_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceId_ = "";
   /**
    * <pre>
    * unique identifier of the resource
@@ -96,7 +92,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object resourceType_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceType_ = "";
   /**
    * <pre>
    * type of the resource
@@ -176,7 +173,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.leftbin.commons.proto.v1.pagination.PageInfoOrBuilder getPageInfoOrBuilder() {
-    return getPageInfo();
+    return pageInfo_ == null ? com.leftbin.commons.proto.v1.pagination.PageInfo.getDefaultInstance() : pageInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -313,11 +310,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.leftbin.commons.proto.v1.timeline.rpc.ListActivityByResourceTypeAndResourceIdInput parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.leftbin.commons.proto.v1.timeline.rpc.ListActivityByResourceTypeAndResourceIdInput parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -396,14 +395,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resourceId_ = "";
-
       resourceType_ = "";
-
-      if (pageInfoBuilder_ == null) {
-        pageInfo_ = null;
-      } else {
-        pageInfo_ = null;
+      pageInfo_ = null;
+      if (pageInfoBuilder_ != null) {
+        pageInfoBuilder_.dispose();
         pageInfoBuilder_ = null;
       }
       return this;
@@ -432,15 +429,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.leftbin.commons.proto.v1.timeline.rpc.ListActivityByResourceTypeAndResourceIdInput buildPartial() {
       com.leftbin.commons.proto.v1.timeline.rpc.ListActivityByResourceTypeAndResourceIdInput result = new com.leftbin.commons.proto.v1.timeline.rpc.ListActivityByResourceTypeAndResourceIdInput(this);
-      result.resourceId_ = resourceId_;
-      result.resourceType_ = resourceType_;
-      if (pageInfoBuilder_ == null) {
-        result.pageInfo_ = pageInfo_;
-      } else {
-        result.pageInfo_ = pageInfoBuilder_.build();
-      }
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.leftbin.commons.proto.v1.timeline.rpc.ListActivityByResourceTypeAndResourceIdInput result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resourceId_ = resourceId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resourceType_ = resourceType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageInfo_ = pageInfoBuilder_ == null
+            ? pageInfo_
+            : pageInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -489,10 +495,12 @@ private static final long serialVersionUID = 0L;
       if (other == com.leftbin.commons.proto.v1.timeline.rpc.ListActivityByResourceTypeAndResourceIdInput.getDefaultInstance()) return this;
       if (!other.getResourceId().isEmpty()) {
         resourceId_ = other.resourceId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getResourceType().isEmpty()) {
         resourceType_ = other.resourceType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPageInfo()) {
@@ -526,19 +534,19 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               resourceId_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               resourceType_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
               input.readMessage(
                   getPageInfoFieldBuilder().getBuilder(),
                   extensionRegistry);
-
+              bitField0_ |= 0x00000004;
               break;
             } // case 26
             default: {
@@ -556,6 +564,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object resourceId_ = "";
     /**
@@ -610,11 +619,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResourceId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       resourceId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -627,8 +634,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearResourceId() {
-      
       resourceId_ = getDefaultInstance().getResourceId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -643,12 +650,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResourceIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       resourceId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -706,11 +711,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResourceType(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       resourceType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -723,8 +726,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearResourceType() {
-      
       resourceType_ = getDefaultInstance().getResourceType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -739,12 +742,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResourceTypeBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       resourceType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -761,7 +762,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the pageInfo field is set.
      */
     public boolean hasPageInfo() {
-      return pageInfoBuilder_ != null || pageInfo_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <pre>
@@ -791,11 +792,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         pageInfo_ = value;
-        onChanged();
       } else {
         pageInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -809,11 +810,11 @@ private static final long serialVersionUID = 0L;
         com.leftbin.commons.proto.v1.pagination.PageInfo.Builder builderForValue) {
       if (pageInfoBuilder_ == null) {
         pageInfo_ = builderForValue.build();
-        onChanged();
       } else {
         pageInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -825,17 +826,18 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePageInfo(com.leftbin.commons.proto.v1.pagination.PageInfo value) {
       if (pageInfoBuilder_ == null) {
-        if (pageInfo_ != null) {
-          pageInfo_ =
-            com.leftbin.commons.proto.v1.pagination.PageInfo.newBuilder(pageInfo_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0) &&
+          pageInfo_ != null &&
+          pageInfo_ != com.leftbin.commons.proto.v1.pagination.PageInfo.getDefaultInstance()) {
+          getPageInfoBuilder().mergeFrom(value);
         } else {
           pageInfo_ = value;
         }
-        onChanged();
       } else {
         pageInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -846,14 +848,13 @@ private static final long serialVersionUID = 0L;
      * <code>.leftbin.commons.proto.v1.pagination.PageInfo page_info = 3 [json_name = "pageInfo"];</code>
      */
     public Builder clearPageInfo() {
-      if (pageInfoBuilder_ == null) {
-        pageInfo_ = null;
-        onChanged();
-      } else {
-        pageInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      pageInfo_ = null;
+      if (pageInfoBuilder_ != null) {
+        pageInfoBuilder_.dispose();
         pageInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -864,7 +865,7 @@ private static final long serialVersionUID = 0L;
      * <code>.leftbin.commons.proto.v1.pagination.PageInfo page_info = 3 [json_name = "pageInfo"];</code>
      */
     public com.leftbin.commons.proto.v1.pagination.PageInfo.Builder getPageInfoBuilder() {
-      
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPageInfoFieldBuilder().getBuilder();
     }

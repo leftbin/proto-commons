@@ -34,11 +34,6 @@ private static final long serialVersionUID = 0L;
     return new PodContainer();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.leftbin.commons.proto.v1.kubernetes.resource.PodProto.internal_static_leftbin_commons_proto_v1_kubernetes_resource_PodContainer_descriptor;
@@ -53,7 +48,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    * <pre>
    *name of the container
@@ -99,7 +95,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IMAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object image_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object image_ = "";
   /**
    * <pre>
    *image used for the container
@@ -145,7 +142,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUS_FIELD_NUMBER = 3;
-  private volatile java.lang.Object status_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
   /**
    * <pre>
    *a container can be in running, waiting or terminated status.
@@ -191,7 +189,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUS_REASON_FIELD_NUMBER = 4;
-  private volatile java.lang.Object statusReason_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object statusReason_ = "";
   /**
    * <pre>
    *reason for the current status of the container.
@@ -239,7 +238,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUS_MESSAGE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object statusMessage_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object statusMessage_ = "";
   /**
    * <pre>
    *description of the reason for the current status. this information is useful when pod in not in running state.
@@ -285,7 +285,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RESTART_COUNT_FIELD_NUMBER = 6;
-  private int restartCount_;
+  private int restartCount_ = 0;
   /**
    * <pre>
    *number of times pod has restarted.
@@ -458,11 +458,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.leftbin.commons.proto.v1.kubernetes.resource.PodContainer parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.leftbin.commons.proto.v1.kubernetes.resource.PodContainer parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -541,18 +543,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       image_ = "";
-
       status_ = "";
-
       statusReason_ = "";
-
       statusMessage_ = "";
-
       restartCount_ = 0;
-
       return this;
     }
 
@@ -579,14 +576,31 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.leftbin.commons.proto.v1.kubernetes.resource.PodContainer buildPartial() {
       com.leftbin.commons.proto.v1.kubernetes.resource.PodContainer result = new com.leftbin.commons.proto.v1.kubernetes.resource.PodContainer(this);
-      result.name_ = name_;
-      result.image_ = image_;
-      result.status_ = status_;
-      result.statusReason_ = statusReason_;
-      result.statusMessage_ = statusMessage_;
-      result.restartCount_ = restartCount_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.leftbin.commons.proto.v1.kubernetes.resource.PodContainer result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.image_ = image_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.status_ = status_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.statusReason_ = statusReason_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.statusMessage_ = statusMessage_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.restartCount_ = restartCount_;
+      }
     }
 
     @java.lang.Override
@@ -635,22 +649,27 @@ private static final long serialVersionUID = 0L;
       if (other == com.leftbin.commons.proto.v1.kubernetes.resource.PodContainer.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getImage().isEmpty()) {
         image_ = other.image_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getStatus().isEmpty()) {
         status_ = other.status_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getStatusReason().isEmpty()) {
         statusReason_ = other.statusReason_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getStatusMessage().isEmpty()) {
         statusMessage_ = other.statusMessage_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getRestartCount() != 0) {
@@ -684,32 +703,32 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               name_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               image_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
               status_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
               statusReason_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               break;
             } // case 34
             case 42: {
               statusMessage_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               break;
             } // case 42
             case 48: {
               restartCount_ = input.readInt32();
-
+              bitField0_ |= 0x00000020;
               break;
             } // case 48
             default: {
@@ -727,6 +746,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -781,11 +801,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setName(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -798,8 +816,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -814,12 +832,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -877,11 +893,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setImage(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       image_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -894,8 +908,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearImage() {
-      
       image_ = getDefaultInstance().getImage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -910,12 +924,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setImageBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       image_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -973,11 +985,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStatus(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       status_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -990,8 +1000,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      
       status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1006,12 +1016,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStatusBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       status_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1072,11 +1080,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStatusReason(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       statusReason_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1090,8 +1096,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearStatusReason() {
-      
       statusReason_ = getDefaultInstance().getStatusReason();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1107,12 +1113,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStatusReasonBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       statusReason_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1170,11 +1174,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStatusMessage(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       statusMessage_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1187,8 +1189,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearStatusMessage() {
-      
       statusMessage_ = getDefaultInstance().getStatusMessage();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1203,12 +1205,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStatusMessageBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       statusMessage_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1236,8 +1236,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setRestartCount(int value) {
-      
+
       restartCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1250,7 +1251,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearRestartCount() {
-      
+      bitField0_ = (bitField0_ & ~0x00000020);
       restartCount_ = 0;
       onChanged();
       return this;

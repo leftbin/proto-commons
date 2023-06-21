@@ -32,11 +32,6 @@ private static final long serialVersionUID = 0L;
     return new GcpFolderState();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.leftbin.commons.proto.v1.cloud.gcp.resource.folder.state.ModelProto.internal_static_leftbin_commons_proto_v1_cloud_gcp_resource_folder_state_GcpFolderState_descriptor;
@@ -51,7 +46,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    * <pre>
    * id of the gcp project.
@@ -99,7 +95,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    * <pre>
    * display name for the folder.
@@ -149,7 +146,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PARENT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object parent_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    * <pre>
    * parent of the folder.
@@ -324,11 +322,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.leftbin.commons.proto.v1.cloud.gcp.resource.folder.state.GcpFolderState parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.leftbin.commons.proto.v1.cloud.gcp.resource.folder.state.GcpFolderState parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -407,12 +407,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       displayName_ = "";
-
       parent_ = "";
-
       return this;
     }
 
@@ -439,11 +437,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.leftbin.commons.proto.v1.cloud.gcp.resource.folder.state.GcpFolderState buildPartial() {
       com.leftbin.commons.proto.v1.cloud.gcp.resource.folder.state.GcpFolderState result = new com.leftbin.commons.proto.v1.cloud.gcp.resource.folder.state.GcpFolderState(this);
-      result.id_ = id_;
-      result.displayName_ = displayName_;
-      result.parent_ = parent_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.leftbin.commons.proto.v1.cloud.gcp.resource.folder.state.GcpFolderState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -492,14 +501,17 @@ private static final long serialVersionUID = 0L;
       if (other == com.leftbin.commons.proto.v1.cloud.gcp.resource.folder.state.GcpFolderState.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -530,17 +542,17 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               id_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               displayName_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
               parent_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               break;
             } // case 26
             default: {
@@ -558,6 +570,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -615,11 +628,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -633,8 +644,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -650,12 +661,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -719,11 +728,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDisplayName(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -738,8 +745,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-      
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -756,12 +763,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -822,11 +827,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setParent(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       parent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -840,8 +843,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-      
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -857,12 +860,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setParentBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       parent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

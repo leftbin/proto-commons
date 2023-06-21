@@ -36,11 +36,6 @@ private static final long serialVersionUID = 0L;
     return new Activity();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.leftbin.commons.proto.v1.timeline.rpc.ModelProto.internal_static_leftbin_commons_proto_v1_timeline_rpc_Activity_descriptor;
@@ -55,7 +50,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ACTIVITY_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object activityId_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object activityId_ = "";
   /**
    * <pre>
    * unique identifier of the activity
@@ -101,7 +97,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ACTIVITY_TYPE_FIELD_NUMBER = 2;
-  private int activityType_;
+  private int activityType_ = 0;
   /**
    * <pre>
    * type of the activity to identity the crud operation happened on the resource
@@ -122,13 +118,13 @@ private static final long serialVersionUID = 0L;
    * @return The activityType.
    */
   @java.lang.Override public com.leftbin.commons.proto.v1.timeline.enums.ActivityType getActivityType() {
-    @SuppressWarnings("deprecation")
-    com.leftbin.commons.proto.v1.timeline.enums.ActivityType result = com.leftbin.commons.proto.v1.timeline.enums.ActivityType.valueOf(activityType_);
+    com.leftbin.commons.proto.v1.timeline.enums.ActivityType result = com.leftbin.commons.proto.v1.timeline.enums.ActivityType.forNumber(activityType_);
     return result == null ? com.leftbin.commons.proto.v1.timeline.enums.ActivityType.UNRECOGNIZED : result;
   }
 
   public static final int ACTOR_FIELD_NUMBER = 3;
-  private volatile java.lang.Object actor_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object actor_ = "";
   /**
    * <pre>
    * email id of the user who has done the activity
@@ -208,11 +204,12 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreTsOrBuilder() {
-    return getCreTs();
+    return creTs_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : creTs_;
   }
 
   public static final int RESOURCE_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object resourceId_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceId_ = "";
   /**
    * <pre>
    * unique identifier of the resource the activity belongs to
@@ -258,7 +255,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RESOURCE_TYPE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object resourceType_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceType_ = "";
   /**
    * <pre>
    * type of the resource the activity belongs to.
@@ -304,6 +302,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int UPDATES_FIELD_NUMBER = 7;
+  @SuppressWarnings("serial")
   private java.util.List<com.leftbin.commons.proto.v1.timeline.rpc.ActivityUpdate> updates_;
   /**
    * <pre>
@@ -545,11 +544,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.leftbin.commons.proto.v1.timeline.rpc.Activity parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.leftbin.commons.proto.v1.timeline.rpc.Activity parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -629,29 +630,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       activityId_ = "";
-
       activityType_ = 0;
-
       actor_ = "";
-
-      if (creTsBuilder_ == null) {
-        creTs_ = null;
-      } else {
-        creTs_ = null;
+      creTs_ = null;
+      if (creTsBuilder_ != null) {
+        creTsBuilder_.dispose();
         creTsBuilder_ = null;
       }
       resourceId_ = "";
-
       resourceType_ = "";
-
       if (updatesBuilder_ == null) {
         updates_ = java.util.Collections.emptyList();
       } else {
         updates_ = null;
         updatesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -678,28 +674,46 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.leftbin.commons.proto.v1.timeline.rpc.Activity buildPartial() {
       com.leftbin.commons.proto.v1.timeline.rpc.Activity result = new com.leftbin.commons.proto.v1.timeline.rpc.Activity(this);
-      int from_bitField0_ = bitField0_;
-      result.activityId_ = activityId_;
-      result.activityType_ = activityType_;
-      result.actor_ = actor_;
-      if (creTsBuilder_ == null) {
-        result.creTs_ = creTs_;
-      } else {
-        result.creTs_ = creTsBuilder_.build();
-      }
-      result.resourceId_ = resourceId_;
-      result.resourceType_ = resourceType_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.leftbin.commons.proto.v1.timeline.rpc.Activity result) {
       if (updatesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           updates_ = java.util.Collections.unmodifiableList(updates_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.updates_ = updates_;
       } else {
         result.updates_ = updatesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.leftbin.commons.proto.v1.timeline.rpc.Activity result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.activityId_ = activityId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.activityType_ = activityType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.actor_ = actor_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.creTs_ = creTsBuilder_ == null
+            ? creTs_
+            : creTsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.resourceId_ = resourceId_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.resourceType_ = resourceType_;
+      }
     }
 
     @java.lang.Override
@@ -748,6 +762,7 @@ private static final long serialVersionUID = 0L;
       if (other == com.leftbin.commons.proto.v1.timeline.rpc.Activity.getDefaultInstance()) return this;
       if (!other.getActivityId().isEmpty()) {
         activityId_ = other.activityId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.activityType_ != 0) {
@@ -755,6 +770,7 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getActor().isEmpty()) {
         actor_ = other.actor_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCreTs()) {
@@ -762,17 +778,19 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getResourceId().isEmpty()) {
         resourceId_ = other.resourceId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getResourceType().isEmpty()) {
         resourceType_ = other.resourceType_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (updatesBuilder_ == null) {
         if (!other.updates_.isEmpty()) {
           if (updates_.isEmpty()) {
             updates_ = other.updates_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureUpdatesIsMutable();
             updates_.addAll(other.updates_);
@@ -785,7 +803,7 @@ private static final long serialVersionUID = 0L;
             updatesBuilder_.dispose();
             updatesBuilder_ = null;
             updates_ = other.updates_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
             updatesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getUpdatesFieldBuilder() : null;
@@ -822,34 +840,34 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               activityId_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 16: {
               activityType_ = input.readEnum();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 16
             case 26: {
               actor_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
               input.readMessage(
                   getCreTsFieldBuilder().getBuilder(),
                   extensionRegistry);
-
+              bitField0_ |= 0x00000008;
               break;
             } // case 34
             case 42: {
               resourceId_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000010;
               break;
             } // case 42
             case 50: {
               resourceType_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000020;
               break;
             } // case 50
             case 58: {
@@ -935,11 +953,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setActivityId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       activityId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -952,8 +968,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearActivityId() {
-      
       activityId_ = getDefaultInstance().getActivityId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -968,12 +984,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setActivityIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       activityId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1000,8 +1014,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setActivityTypeValue(int value) {
-      
       activityType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1015,8 +1029,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public com.leftbin.commons.proto.v1.timeline.enums.ActivityType getActivityType() {
-      @SuppressWarnings("deprecation")
-      com.leftbin.commons.proto.v1.timeline.enums.ActivityType result = com.leftbin.commons.proto.v1.timeline.enums.ActivityType.valueOf(activityType_);
+      com.leftbin.commons.proto.v1.timeline.enums.ActivityType result = com.leftbin.commons.proto.v1.timeline.enums.ActivityType.forNumber(activityType_);
       return result == null ? com.leftbin.commons.proto.v1.timeline.enums.ActivityType.UNRECOGNIZED : result;
     }
     /**
@@ -1032,7 +1045,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+      bitField0_ |= 0x00000002;
       activityType_ = value.getNumber();
       onChanged();
       return this;
@@ -1046,7 +1059,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearActivityType() {
-      
+      bitField0_ = (bitField0_ & ~0x00000002);
       activityType_ = 0;
       onChanged();
       return this;
@@ -1105,11 +1118,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setActor(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       actor_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1122,8 +1133,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearActor() {
-      
       actor_ = getDefaultInstance().getActor();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1138,12 +1149,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setActorBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       actor_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1160,7 +1169,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the creTs field is set.
      */
     public boolean hasCreTs() {
-      return creTsBuilder_ != null || creTs_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <pre>
@@ -1190,11 +1199,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         creTs_ = value;
-        onChanged();
       } else {
         creTsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1208,11 +1217,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp.Builder builderForValue) {
       if (creTsBuilder_ == null) {
         creTs_ = builderForValue.build();
-        onChanged();
       } else {
         creTsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1224,17 +1233,18 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeCreTs(com.google.protobuf.Timestamp value) {
       if (creTsBuilder_ == null) {
-        if (creTs_ != null) {
-          creTs_ =
-            com.google.protobuf.Timestamp.newBuilder(creTs_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0) &&
+          creTs_ != null &&
+          creTs_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreTsBuilder().mergeFrom(value);
         } else {
           creTs_ = value;
         }
-        onChanged();
       } else {
         creTsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1245,14 +1255,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp cre_ts = 4 [json_name = "creTs"];</code>
      */
     public Builder clearCreTs() {
-      if (creTsBuilder_ == null) {
-        creTs_ = null;
-        onChanged();
-      } else {
-        creTs_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      creTs_ = null;
+      if (creTsBuilder_ != null) {
+        creTsBuilder_.dispose();
         creTsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1263,7 +1272,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp cre_ts = 4 [json_name = "creTs"];</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreTsBuilder() {
-      
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreTsFieldBuilder().getBuilder();
     }
@@ -1356,11 +1365,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResourceId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       resourceId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1373,8 +1380,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearResourceId() {
-      
       resourceId_ = getDefaultInstance().getResourceId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1389,12 +1396,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResourceIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       resourceId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1452,11 +1457,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResourceType(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       resourceType_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1469,8 +1472,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearResourceType() {
-      
       resourceType_ = getDefaultInstance().getResourceType();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1485,12 +1488,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResourceTypeBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       resourceType_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1498,9 +1499,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.leftbin.commons.proto.v1.timeline.rpc.ActivityUpdate> updates_ =
       java.util.Collections.emptyList();
     private void ensureUpdatesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         updates_ = new java.util.ArrayList<com.leftbin.commons.proto.v1.timeline.rpc.ActivityUpdate>(updates_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000040;
        }
     }
 
@@ -1705,7 +1706,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearUpdates() {
       if (updatesBuilder_ == null) {
         updates_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         updatesBuilder_.clear();
@@ -1817,7 +1818,7 @@ private static final long serialVersionUID = 0L;
         updatesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.leftbin.commons.proto.v1.timeline.rpc.ActivityUpdate, com.leftbin.commons.proto.v1.timeline.rpc.ActivityUpdate.Builder, com.leftbin.commons.proto.v1.timeline.rpc.ActivityUpdateOrBuilder>(
                 updates_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         updates_ = null;

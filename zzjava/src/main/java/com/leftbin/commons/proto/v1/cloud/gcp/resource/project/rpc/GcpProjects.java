@@ -30,11 +30,6 @@ private static final long serialVersionUID = 0L;
     return new GcpProjects();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.leftbin.commons.proto.v1.cloud.gcp.resource.project.rpc.ModelProto.internal_static_leftbin_commons_proto_v1_cloud_gcp_resource_project_rpc_GcpProjects_descriptor;
@@ -49,6 +44,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LIST_FIELD_NUMBER = 1;
+  @SuppressWarnings("serial")
   private java.util.List<com.leftbin.commons.proto.v1.cloud.gcp.resource.project.rpc.GcpProject> list_;
   /**
    * <code>repeated .leftbin.commons.proto.v1.cloud.gcp.resource.project.rpc.GcpProject list = 1 [json_name = "list"];</code>
@@ -199,11 +195,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.leftbin.commons.proto.v1.cloud.gcp.resource.project.rpc.GcpProjects parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.leftbin.commons.proto.v1.cloud.gcp.resource.project.rpc.GcpProjects parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -282,6 +280,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (listBuilder_ == null) {
         list_ = java.util.Collections.emptyList();
       } else {
@@ -315,7 +314,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.leftbin.commons.proto.v1.cloud.gcp.resource.project.rpc.GcpProjects buildPartial() {
       com.leftbin.commons.proto.v1.cloud.gcp.resource.project.rpc.GcpProjects result = new com.leftbin.commons.proto.v1.cloud.gcp.resource.project.rpc.GcpProjects(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.leftbin.commons.proto.v1.cloud.gcp.resource.project.rpc.GcpProjects result) {
       if (listBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           list_ = java.util.Collections.unmodifiableList(list_);
@@ -325,8 +330,10 @@ private static final long serialVersionUID = 0L;
       } else {
         result.list_ = listBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.leftbin.commons.proto.v1.cloud.gcp.resource.project.rpc.GcpProjects result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

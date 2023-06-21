@@ -32,11 +32,6 @@ private static final long serialVersionUID = 0L;
     return new AuthorizationConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.leftbin.commons.proto.v1.authz.extensions.ExtensionsProto.internal_static_leftbin_commons_proto_v1_authz_extensions_AuthorizationConfig_descriptor;
@@ -51,7 +46,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PERMISSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object permission_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object permission_ = "";
   /**
    * <pre>
    * permission required to run the service
@@ -97,7 +93,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object resourceType_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceType_ = "";
   /**
    * <pre>
    * type of the resource that the permission should be granted
@@ -143,7 +140,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ERROR_MSG_FIELD_NUMBER = 3;
-  private volatile java.lang.Object errorMsg_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorMsg_ = "";
   /**
    * <pre>
    * error message to be returned when the permission is not granted to user
@@ -316,11 +314,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.leftbin.commons.proto.v1.authz.extensions.AuthorizationConfig parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.leftbin.commons.proto.v1.authz.extensions.AuthorizationConfig parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -399,12 +399,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       permission_ = "";
-
       resourceType_ = "";
-
       errorMsg_ = "";
-
       return this;
     }
 
@@ -431,11 +429,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.leftbin.commons.proto.v1.authz.extensions.AuthorizationConfig buildPartial() {
       com.leftbin.commons.proto.v1.authz.extensions.AuthorizationConfig result = new com.leftbin.commons.proto.v1.authz.extensions.AuthorizationConfig(this);
-      result.permission_ = permission_;
-      result.resourceType_ = resourceType_;
-      result.errorMsg_ = errorMsg_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.leftbin.commons.proto.v1.authz.extensions.AuthorizationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.permission_ = permission_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resourceType_ = resourceType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.errorMsg_ = errorMsg_;
+      }
     }
 
     @java.lang.Override
@@ -484,14 +493,17 @@ private static final long serialVersionUID = 0L;
       if (other == com.leftbin.commons.proto.v1.authz.extensions.AuthorizationConfig.getDefaultInstance()) return this;
       if (!other.getPermission().isEmpty()) {
         permission_ = other.permission_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getResourceType().isEmpty()) {
         resourceType_ = other.resourceType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getErrorMsg().isEmpty()) {
         errorMsg_ = other.errorMsg_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -522,17 +534,17 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               permission_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               resourceType_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
               errorMsg_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               break;
             } // case 26
             default: {
@@ -550,6 +562,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object permission_ = "";
     /**
@@ -604,11 +617,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPermission(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       permission_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -621,8 +632,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearPermission() {
-      
       permission_ = getDefaultInstance().getPermission();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -637,12 +648,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPermissionBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       permission_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,11 +709,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResourceType(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       resourceType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -717,8 +724,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearResourceType() {
-      
       resourceType_ = getDefaultInstance().getResourceType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -733,12 +740,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResourceTypeBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       resourceType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -796,11 +801,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setErrorMsg(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       errorMsg_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -813,8 +816,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearErrorMsg() {
-      
       errorMsg_ = getDefaultInstance().getErrorMsg();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -829,12 +832,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setErrorMsgBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       errorMsg_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

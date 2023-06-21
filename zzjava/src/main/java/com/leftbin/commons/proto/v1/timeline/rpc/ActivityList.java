@@ -30,11 +30,6 @@ private static final long serialVersionUID = 0L;
     return new ActivityList();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.leftbin.commons.proto.v1.timeline.rpc.ModelProto.internal_static_leftbin_commons_proto_v1_timeline_rpc_ActivityList_descriptor;
@@ -49,7 +44,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TOTAL_PAGES_FIELD_NUMBER = 1;
-  private int totalPages_;
+  private int totalPages_ = 0;
   /**
    * <pre>
    * total number of pages
@@ -64,6 +59,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ENTRIES_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
   private java.util.List<com.leftbin.commons.proto.v1.timeline.rpc.Activity> entries_;
   /**
    * <pre>
@@ -245,11 +241,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.leftbin.commons.proto.v1.timeline.rpc.ActivityList parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.leftbin.commons.proto.v1.timeline.rpc.ActivityList parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -328,15 +326,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       totalPages_ = 0;
-
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
       } else {
         entries_ = null;
         entriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -363,19 +361,29 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.leftbin.commons.proto.v1.timeline.rpc.ActivityList buildPartial() {
       com.leftbin.commons.proto.v1.timeline.rpc.ActivityList result = new com.leftbin.commons.proto.v1.timeline.rpc.ActivityList(this);
-      int from_bitField0_ = bitField0_;
-      result.totalPages_ = totalPages_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.leftbin.commons.proto.v1.timeline.rpc.ActivityList result) {
       if (entriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.entries_ = entries_;
       } else {
         result.entries_ = entriesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.leftbin.commons.proto.v1.timeline.rpc.ActivityList result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.totalPages_ = totalPages_;
+      }
     }
 
     @java.lang.Override
@@ -429,7 +437,7 @@ private static final long serialVersionUID = 0L;
         if (!other.entries_.isEmpty()) {
           if (entries_.isEmpty()) {
             entries_ = other.entries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureEntriesIsMutable();
             entries_.addAll(other.entries_);
@@ -442,7 +450,7 @@ private static final long serialVersionUID = 0L;
             entriesBuilder_.dispose();
             entriesBuilder_ = null;
             entries_ = other.entries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             entriesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getEntriesFieldBuilder() : null;
@@ -479,7 +487,7 @@ private static final long serialVersionUID = 0L;
               break;
             case 8: {
               totalPages_ = input.readInt32();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 8
             case 18: {
@@ -535,8 +543,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTotalPages(int value) {
-      
+
       totalPages_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -549,7 +558,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearTotalPages() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       totalPages_ = 0;
       onChanged();
       return this;
@@ -558,9 +567,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.leftbin.commons.proto.v1.timeline.rpc.Activity> entries_ =
       java.util.Collections.emptyList();
     private void ensureEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         entries_ = new java.util.ArrayList<com.leftbin.commons.proto.v1.timeline.rpc.Activity>(entries_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -754,7 +763,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearEntries() {
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         entriesBuilder_.clear();
@@ -859,7 +868,7 @@ private static final long serialVersionUID = 0L;
         entriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.leftbin.commons.proto.v1.timeline.rpc.Activity, com.leftbin.commons.proto.v1.timeline.rpc.Activity.Builder, com.leftbin.commons.proto.v1.timeline.rpc.ActivityOrBuilder>(
                 entries_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         entries_ = null;

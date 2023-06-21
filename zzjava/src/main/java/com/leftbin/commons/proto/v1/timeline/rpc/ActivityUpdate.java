@@ -20,8 +20,10 @@ private static final long serialVersionUID = 0L;
     fieldType_ = "";
     oldValue_ = "";
     newValue_ = "";
-    addedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    removedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    addedValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    removedValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -31,11 +33,6 @@ private static final long serialVersionUID = 0L;
     return new ActivityUpdate();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.leftbin.commons.proto.v1.timeline.rpc.ModelProto.internal_static_leftbin_commons_proto_v1_timeline_rpc_ActivityUpdate_descriptor;
@@ -50,7 +47,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FIELD_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object fieldName_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fieldName_ = "";
   /**
    * <pre>
    * name of the field in resource that got updated
@@ -96,7 +94,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FIELD_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object fieldType_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fieldType_ = "";
   /**
    * <pre>
    * data type of the field
@@ -142,7 +141,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int OLD_VALUE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object oldValue_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object oldValue_ = "";
   /**
    * <pre>
    * old value of the field
@@ -190,7 +190,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NEW_VALUE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object newValue_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object newValue_ = "";
   /**
    * <pre>
    * new value of the field
@@ -238,7 +239,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ADDED_VALUES_FIELD_NUMBER = 5;
-  private com.google.protobuf.LazyStringList addedValues_;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList addedValues_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    * <pre>
    * this is specific to field data type list
@@ -293,7 +296,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int REMOVED_VALUES_FIELD_NUMBER = 6;
-  private com.google.protobuf.LazyStringList removedValues_;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList removedValues_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    * <pre>
    * this is specific to field data type list
@@ -519,11 +524,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.leftbin.commons.proto.v1.timeline.rpc.ActivityUpdate parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.leftbin.commons.proto.v1.timeline.rpc.ActivityUpdate parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -598,18 +605,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fieldName_ = "";
-
       fieldType_ = "";
-
       oldValue_ = "";
-
       newValue_ = "";
-
-      addedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      removedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      addedValues_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      removedValues_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -636,23 +640,33 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.leftbin.commons.proto.v1.timeline.rpc.ActivityUpdate buildPartial() {
       com.leftbin.commons.proto.v1.timeline.rpc.ActivityUpdate result = new com.leftbin.commons.proto.v1.timeline.rpc.ActivityUpdate(this);
-      int from_bitField0_ = bitField0_;
-      result.fieldName_ = fieldName_;
-      result.fieldType_ = fieldType_;
-      result.oldValue_ = oldValue_;
-      result.newValue_ = newValue_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        addedValues_ = addedValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.addedValues_ = addedValues_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        removedValues_ = removedValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.removedValues_ = removedValues_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.leftbin.commons.proto.v1.timeline.rpc.ActivityUpdate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fieldName_ = fieldName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fieldType_ = fieldType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.oldValue_ = oldValue_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.newValue_ = newValue_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        addedValues_.makeImmutable();
+        result.addedValues_ = addedValues_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        removedValues_.makeImmutable();
+        result.removedValues_ = removedValues_;
+      }
     }
 
     @java.lang.Override
@@ -701,24 +715,28 @@ private static final long serialVersionUID = 0L;
       if (other == com.leftbin.commons.proto.v1.timeline.rpc.ActivityUpdate.getDefaultInstance()) return this;
       if (!other.getFieldName().isEmpty()) {
         fieldName_ = other.fieldName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFieldType().isEmpty()) {
         fieldType_ = other.fieldType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getOldValue().isEmpty()) {
         oldValue_ = other.oldValue_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getNewValue().isEmpty()) {
         newValue_ = other.newValue_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.addedValues_.isEmpty()) {
         if (addedValues_.isEmpty()) {
           addedValues_ = other.addedValues_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000010;
         } else {
           ensureAddedValuesIsMutable();
           addedValues_.addAll(other.addedValues_);
@@ -728,7 +746,7 @@ private static final long serialVersionUID = 0L;
       if (!other.removedValues_.isEmpty()) {
         if (removedValues_.isEmpty()) {
           removedValues_ = other.removedValues_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000020;
         } else {
           ensureRemovedValuesIsMutable();
           removedValues_.addAll(other.removedValues_);
@@ -763,22 +781,22 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               fieldName_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               fieldType_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
               oldValue_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
               newValue_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000008;
               break;
             } // case 34
             case 42: {
@@ -863,11 +881,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setFieldName(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       fieldName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -880,8 +896,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearFieldName() {
-      
       fieldName_ = getDefaultInstance().getFieldName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -896,12 +912,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setFieldNameBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       fieldName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -959,11 +973,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setFieldType(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       fieldType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -976,8 +988,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearFieldType() {
-      
       fieldType_ = getDefaultInstance().getFieldType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -992,12 +1004,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setFieldTypeBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       fieldType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1058,11 +1068,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setOldValue(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       oldValue_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1076,8 +1084,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearOldValue() {
-      
       oldValue_ = getDefaultInstance().getOldValue();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1093,12 +1101,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setOldValueBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       oldValue_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1159,11 +1165,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setNewValue(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       newValue_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1177,8 +1181,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearNewValue() {
-      
       newValue_ = getDefaultInstance().getNewValue();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1194,22 +1198,21 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setNewValueBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       newValue_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList addedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList addedValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     private void ensureAddedValuesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!addedValues_.isModifiable()) {
         addedValues_ = new com.google.protobuf.LazyStringArrayList(addedValues_);
-        bitField0_ |= 0x00000001;
-       }
+      }
+      bitField0_ |= 0x00000010;
     }
     /**
      * <pre>
@@ -1222,7 +1225,8 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ProtocolStringList
         getAddedValuesList() {
-      return addedValues_.getUnmodifiableView();
+      addedValues_.makeImmutable();
+      return addedValues_;
     }
     /**
      * <pre>
@@ -1276,11 +1280,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAddedValues(
         int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAddedValuesIsMutable();
+      if (value == null) { throw new NullPointerException(); }
+      ensureAddedValuesIsMutable();
       addedValues_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1296,11 +1299,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAddedValues(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAddedValuesIsMutable();
+      if (value == null) { throw new NullPointerException(); }
+      ensureAddedValuesIsMutable();
       addedValues_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1319,6 +1321,7 @@ private static final long serialVersionUID = 0L;
       ensureAddedValuesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, addedValues_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1332,8 +1335,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearAddedValues() {
-      addedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      addedValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);;
       onChanged();
       return this;
     }
@@ -1349,22 +1353,22 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addAddedValuesBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       ensureAddedValuesIsMutable();
       addedValues_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList removedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList removedValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     private void ensureRemovedValuesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!removedValues_.isModifiable()) {
         removedValues_ = new com.google.protobuf.LazyStringArrayList(removedValues_);
-        bitField0_ |= 0x00000002;
-       }
+      }
+      bitField0_ |= 0x00000020;
     }
     /**
      * <pre>
@@ -1377,7 +1381,8 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ProtocolStringList
         getRemovedValuesList() {
-      return removedValues_.getUnmodifiableView();
+      removedValues_.makeImmutable();
+      return removedValues_;
     }
     /**
      * <pre>
@@ -1431,11 +1436,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRemovedValues(
         int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRemovedValuesIsMutable();
+      if (value == null) { throw new NullPointerException(); }
+      ensureRemovedValuesIsMutable();
       removedValues_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1451,11 +1455,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addRemovedValues(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRemovedValuesIsMutable();
+      if (value == null) { throw new NullPointerException(); }
+      ensureRemovedValuesIsMutable();
       removedValues_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1474,6 +1477,7 @@ private static final long serialVersionUID = 0L;
       ensureRemovedValuesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, removedValues_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1487,8 +1491,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearRemovedValues() {
-      removedValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      removedValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);;
       onChanged();
       return this;
     }
@@ -1504,12 +1509,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addRemovedValuesBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       ensureRemovedValuesIsMutable();
       removedValues_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
