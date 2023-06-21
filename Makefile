@@ -2,8 +2,8 @@ version ?= local
 
 .PHONY: build
 build:	
-	rm -rf generated zzgo/leftbin zzjava/src/main/java/com/leftbin
-	mkdir -p generated zzjava/src/main/java
+	rm -rf generated zzgo/leftbin zzjava/src/main/
+	mkdir -p generated zzjava/src/main/java zzjava/src/main/kotlin
 	buf generate --include-imports
 	cp -R generated/java/. zzjava/src/main/java/
 	cp -R generated/kotlin/. zzjava/src/main/kotlin/
